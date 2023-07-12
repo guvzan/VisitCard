@@ -1,0 +1,210 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 p-0">
+            <img class="w-100 bg-1" src="{% static 'main_app/img/bg1.jpg'  %}" alt="">
+<!--            <img class="figure-1" src="{% static 'main_app/img/figure1.png'  %}" alt="">-->
+            <img class="figure-2" src="{% static 'main_app/img/figure2.png'  %}" alt="">
+            <img class="figure-3" src="{% static 'main_app/img/figure3.png'  %}" alt="">
+            <img class="photo-2" src="{% static 'main_app/img/photo2.png'  %}" alt="">
+            <img class="figure-4" src="{% static 'main_app/img/figure4.png'  %}" alt="">
+<!--            <img class="figure-5" src="{% static 'main_app/img/figure5.png'  %}" alt="">-->
+<!--            <img class="image-1" src="{% static 'main_app/img/image1.png'  %}" alt="">-->
+            <img class="image-2" src="{% static 'main_app/img/image2.png'  %}" alt="">
+
+            <div class="text-box-1">
+                <h1 class="header-1">
+                    Лікар невролог
+                </h1>
+                <br><br>
+                <button class="elem elem-1" onclick="myFunction()" id="myButton">
+                    <img class="icon-1" src="{% static 'main_app/img/icon1.png'  %}" alt="">
+                    Зателефонувати
+                </button>
+                <a href="https://tinyurl.com/yc87pj5d">
+                    <button class="elem elem-2">
+                        <img class="icon-1" src="{% static 'main_app/img/icon2.png'  %}" alt="">
+                        Написати у Viber
+                    </button>
+                </a>
+                <div class="elem elem-3">
+                    <img class="icon-1" src="{% static 'main_app/img/icon3.png'  %}" alt="">
+                        Пн - Пт
+                        9:00 - 13:00
+                </div>
+            </div>
+
+            <div class="text-box-2">
+                <h2 class="header-2">
+                    Говзан Алла Анатоліївна – лікар невролог вищої кваліфікаційної категорії.
+                </h2>
+            </div>
+
+            <div class="text-box-3">
+                <h3 class="header-3">
+                    Досвід роботи
+                </h3>
+                <p>Стаж роботи - 21 рік. Працювала  в Лисецькій ЦРЛ на посаді лікаря невролога поліклініки,
+                    є досвід роботи у стаціонарі. Є учасником всеукраїнських науково - практичних конференцій
+                    та семінарів з міжнародною участю. Відвідую міждисциплінарні симпозіуми в прагненні
+                    постійного професійного розвитку.
+                </p>
+            </div>
+
+            <div class="text-box-4">
+                <h3 class="header-3">
+                    Освіта
+                </h3>
+                <p>Закінчила Івано Франківську Державну Медичну Академію в 2002 році за спеціальністю
+                    "лікувальна справа". Інтернатура - по неврології.
+
+                </p>
+            </div>
+
+             <div class="text-box-5">
+                <h3 class="header-3">
+                    Захворювання, які лікує невролог:
+                </h3>
+                <p>
+                    Розлади вегетативної нервової системи <br>
+                    Наслідки перенесених інсультів <br>
+                    Демієлінізуючі захворювання <br>
+                    Синдроми головного болю <br>
+                    Полінейропатії <br>
+                    Наслідки ЧМТ <br>
+                    Розлади сну <br>
+                    Радикуліти <br>
+                    Епілепсія <br>
+                    Невралгії <br>
+                    Неврити <br>
+                </p>
+
+            </div>
+
+            <div class="text-box-8">
+                <h3 class="header-3">
+                    Послуги
+                </h3>
+                <p>
+                    Обстеження пацієнта <br>
+                    Призначення лікування <br>
+                    Можливий огляд на дому <br>
+                    Постійний зв’язок в процесі лікування <br>
+                </p>
+
+            </div>
+
+            <div class="text-box-6">
+                <h3 class="header-3">
+                    Блог
+                </h3>
+            </div>
+
+            <div class="blog-1">
+                <h3 class="header-4 center m-top-3">
+                    <b>{{ post.title }}</b>
+                </h3>
+                <p class="comment-text">
+                    {{ post }}
+                </p>
+                <p class="center">
+                    <a href="{{ post.link }}">Читати повністю на Facebook</a>
+                </p>
+            </div>
+
+            <div class="comment-block">
+                <h3 class="header-3">
+                    Відгуки ({{ comm_amount }})
+                </h3>
+                <ul class="gallery">
+                    <li style="background: {{ random_color }};">
+                            <h3 class="header-4-5">
+                                Написати відгук
+                            </h3>
+                            <form action="{% url 'main_app:index' %}" method="post">
+                                {% csrf_token %}
+                                <p>{{ form.first_name }} {{ form.last_name }}</p>
+                                <p>{{ form.text }}</p>
+                                <button name="submit">Надіслати</button>
+                            </form>
+                    </li>
+                    {% for comment,color in comm_col %}
+                        {% if comment.status == 1 %}
+                            <li style="background: {{ color }};">
+                                <p><b>{{ comment.first_name }} {{ comment.last_name }}</b></p>
+                                <p class="comment-text">{{ comment.text }}</p>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+
+
+                </ul>
+            </div>
+
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid footer">
+    <div class="row">
+        <div class="col-6">
+            <div class="contacts">
+                <h3 class="header-3 center">
+                    Контактні дані
+                </h3>
+                <div class="contact-box">
+                    <p>
+                        <img class="elem-4" src="{% static 'main_app/img/icon4.png' %}" alt="">
+                        смт. Лисець, вул. Січових Стрільців 41а
+                    </p>
+
+                    <p>
+                        <img class="elem-4" src="{% static 'main_app/img/icon6.png' %}" alt="">
+                        allahovzan@gmail.com
+                    </p>
+
+                    <p>
+                        <img class="elem-4" src="{% static 'main_app/img/icon5.png' %}" alt="">
+                        0972490514
+                    </p>
+
+
+                    <p>
+                        <img class="elem-4" src="{% static 'main_app/img/icon7.png' %}" alt="">
+                        <a href="https://www.facebook.com/profile.php?id=100015748718281">Алла Говзан</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.8329514758875!2d24.73269531567513!3d48.880460979289616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4730c40da40c9117%3A0x621d1dc7d91d7a7a!2z0YEuINCl0YDQuNC_0LvQuNC9!5e0!3m2!1suk!2sua!4v1688977442212!5m2!1suk!2sua" width="100%" height="90%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hide">
+    <input type="text" value="0972435216" id="number">
+</div>
+
+
+
+
+
+
+    
+{% endblock content %}

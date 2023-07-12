@@ -1,0 +1,22 @@
+{% load bootstrap4 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+
+</head>
+<body>
+  {% block content %}
+  {% endblock content %}
+</body>
+
+<script src="{% static 'main_app/js/script.js' %}"></script>
+
+</html>

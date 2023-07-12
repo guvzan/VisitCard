@@ -1,0 +1,312 @@
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #dcf2dc !important;
+}
+
+.bg-1{
+    height: 80%;
+}
+
+.figure-1{
+    width: 50%;
+    position: absolute;
+    top: -5%;
+    left: -15%;
+}
+
+.figure-2{
+    width: 120%;
+    position: absolute;
+    top: 60%;
+    left: -10%;
+}
+
+.figure-3{
+    width: 70%;
+    position: absolute;
+    top: 85%;
+    left: -20%;
+}
+
+.figure-4{
+    width: 100%;
+    position: absolute;
+    top: 143%;
+    left: 22%;
+}
+
+.figure-5{
+    width: 45%;
+    position: absolute;
+    top: 250%;
+    left: -15%;
+}
+
+.image-1{
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    top: 135%;
+    right: 5%;
+}
+
+.image-2{
+    width: 15%;
+    position: absolute;
+    top: 170%;
+    right: 45%;
+}
+
+.photo-2{
+    width: 45%;
+    position: absolute;
+    top: 64%;
+    left: 55%;
+}
+
+.container-2{
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.text-box-1{
+    width: 30%;
+    height: 25%;
+    position: absolute;
+    top: 2%;
+    right: -3%;
+}
+
+.text-box-2{
+    width: 45%;
+    height: 25%;
+    position: absolute;
+    top: 82%;
+    left: 5%;
+    font-size: 5.5vw;
+}
+
+.text-box-3{
+    text-align: justify;
+    width: 30%;
+    height: 25%;
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    font-size: 1.1vw;
+}
+
+.text-box-4{
+    text-align: justify;
+    width: 30%;
+    height: 25%;
+    position: absolute;
+    top: 120%;
+    left: 5%;
+    font-size: 1.1vw;
+}
+
+.text-box-5{
+    text-align: justify;
+    width: 30%;
+    height: 25%;
+    position: absolute;
+    top: 134%;
+    left: 5%;
+    font-size: 1.1vw;
+}
+
+.text-box-6{
+    text-align: justify;
+    width: 30%;
+    height: 25%;
+    position: absolute;
+    top: 147%;
+    right: -1%;
+    font-size: 1.1vw;
+}
+
+.text-box-7{
+    text-align: justify;
+    width: 30%;
+    height: 25%;
+    position: absolute;
+    top: 250%;
+    right: 15%;
+    font-size: 1.1vw;
+}
+
+.text-box-8{
+    text-align: justify;
+    width: 30%;
+    height: 25%;
+    position: absolute;
+    top: 170%;
+    left: 5%;
+    font-size: 1.1vw;
+}
+
+.elem{
+    width: 82%;
+    height: 20%;
+    text-align: left;
+    font-size: 2vw;
+    border: 1px solid black;
+    border-radius: 50em;
+    word-wrap: break-word;
+    background-color: #d1c5c5;
+
+}
+
+.elem-1{
+    position: absolute;
+    top: 80%;
+    left: 0%;
+}
+
+.elem-2{
+    position: absolute;
+    top: 110%;
+    left: 0%;
+}
+
+.elem-3{
+    position: absolute;
+    top: 140%;
+    left: 0%;
+}
+
+.elem-4{
+    width: 8%;
+}
+
+.blog-1{
+    height: 40%;
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 1.2em;
+    position: absolute;
+    top: 153%;
+    right: 5%;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.header-1{
+    font-size: 5.5vw;
+}
+
+.header-2{
+    font-size: 3vw;
+}
+
+.header-3{
+    font-size: 2.5vw;
+}
+
+.header-4{
+    font-size: 1.1vw;
+}
+
+.header-4-5{
+    font-size: 1.9vw;
+}
+
+.icon-1{
+    width: 15%;
+    margin-left: 5%;
+}
+
+.no-markers{
+    margin-left: -9%;
+    list-style-type: none;
+}
+
+.comment-block{
+    width: 65%;
+    height: 100%;
+    position: absolute;
+    top: 197%;
+    right: 5%;
+    text-align: center;
+}
+
+
+.gallery {
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: repeat(20, 40vw);
+	grid-template-rows: 1fr;
+	grid-column-gap: 1rem;
+	grid-row-gap: 1rem;
+	overflow: scroll;
+	height: 20vw;
+	scroll-snap-type: both mandatory;
+	scroll-padding: 1rem;
+    overflow-y: hidden;
+    border-radius: 10%;
+}
+
+.active {
+	scroll-snap-type: unset;
+}
+
+li {
+	scroll-snap-align: center;
+	display: inline-block;
+	border-radius: 10px;
+	font-size: 1.1vw;
+}
+
+.default{
+    display: block;
+    border-radius: 0px;
+    font-size: 1.1vw;
+    scroll-snap-align: start;
+}
+
+.comment-text{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.center{
+    text-align: center;
+}
+
+.m-top-3{
+    margin-top: 3%;
+}
+
+.footer{
+    height: 72%;
+    position: absolute;
+    top: 370%;
+    left: 0%;
+    background-color: #eca4a4;
+    overflow: hidden;
+}
+
+.map{
+    margin-top: 6%;
+    width: 100%;
+    height: 120%;
+}
+
+.contacts{
+    margin-top: 6%;
+    font-size: 2vw;
+}
+
+.contact-box{
+    margin-top: 10%;
+    margin-left: 3%;
+}
+
+.hide{
+    position: absolute;
+    top: -500%;
+}
