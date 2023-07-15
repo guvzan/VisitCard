@@ -1,0 +1,12 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+    <div class="center">
+        <h1 >Редагувати допис</h1>
+        <form action="{% url 'main_app:edit_post' post.id %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button name="submit">Зберегти</button>
+        </form>
+    </div>
+{% endblock content %}

@@ -128,7 +128,7 @@
                             </h3>
                             <form action="{% url 'main_app:index' %}" method="post">
                                 {% csrf_token %}
-                                <p>{{ form.first_name }} {{ form.last_name }}</p>
+                                <p>{{ form.name }} {{ form.about }} <a href="#">Перейти на гугл карти</a></p>
                                 <p>{{ form.text }}</p>
                                 <button name="submit">Надіслати</button>
                             </form>
@@ -136,24 +136,24 @@
                     {% for comment,color in comm_col %}
                         {% if comment.status == 1 %}
                             <li style="background: {{ color }};">
-                                <p><b>{{ comment.first_name }} {{ comment.last_name }}</b></p>
+                                <p>
+                                    <b>
+                                        {% if comment.link %}
+                                            <a href="{{ comment.link }}">{{ comment.name }}</a>
+                                        {% else %}
+                                            {{ comment.name }}
+                                        {% endif %}
+                                    </b>
+                                    &nbsp;&nbsp;
+                                    {{ comment.about }}
+                                </p>
                                 <p class="comment-text">{{ comment.text }}</p>
                             </li>
                         {% endif %}
                     {% endfor %}
-
-
-
                 </ul>
             </div>
-
-
-
-
             </div>
-
-
-
         </div>
     </div>
 </div>
@@ -191,7 +191,7 @@
         </div>
         <div class="col-6">
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.8329514758875!2d24.73269531567513!3d48.880460979289616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4730c40da40c9117%3A0x621d1dc7d91d7a7a!2z0YEuINCl0YDQuNC_0LvQuNC9!5e0!3m2!1suk!2sua!4v1688977442212!5m2!1suk!2sua" width="100%" height="90%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d412.5045111787586!2d24.611061182292282!3d48.87010192671593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0YHQvNGCLiDQm9C40YHQtdGG0YwsINCy0YPQuy4g0KHRltGH0L7QstC40YUg0KHRgtGA0ZbQu9GM0YbRltCyIDQx0LA!5e1!3m2!1suk!2sua!4v1689412883962!5m2!1suk!2sua" width="100%" height="90%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>

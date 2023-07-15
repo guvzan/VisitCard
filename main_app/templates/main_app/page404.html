@@ -1,0 +1,14 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+    <div class="container" align="center">
+        <div class="row">
+            <div class="col-12">
+                <hr>
+                <h1>Сторінку не знайдено</h1>
+                <a href="{% url 'main_app:index' %}">Повернутися на головну</a>
+                <hr>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

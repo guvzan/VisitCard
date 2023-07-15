@@ -1,0 +1,76 @@
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12" align="center">
+                <p><a href="{% url 'users:logout' %}">Log out</a></p>
+                <h1>Додати пост до блогу</h1>
+                <form action="{% url 'main_app:admin_page' %}" method="post">
+                    {% csrf_token %}
+                    {{ post_form.as_p }}
+                    <button name="submit">Зберегти</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12" align="center">
+                <hr>
+                <h1>Блог</h1>
+                {% for post in posts %}
+                    <p>
+                        <a href="{{ post.link }}">{{ post.title }}</a>
+                        <a href="{% url 'main_app:edit_post' post.id %}">
+                            <button>Редагувати</button>
+                        </a>
+                    </p>
+                {% endfor %}
+
+                <hr>
+                <h1>Неперевірені відгуки</h1>
+                {% if unseen_comments %}
+                    {% for unseen in unseen_comments %}
+                        <div class="admin-comments-1">
+                            <p><b>{{ unseen.name }}</b></p>
+                            <p><b>{{ unseen.about }}</b></p>
+                            <p>{{ unseen.text }}</p>
+                            <p>
+                                <b>{{ unseen.date_added }} Status: {{ unseen.status }}</b>
+                                <form action="{% url 'main_app:upvote_comment' unseen.id %}">
+                                    <button name="submit">Upvote</button>
+                                </form>
+                            </p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Nothing here</p>
+                {% endif %}
+
+                <hr>
+                <h1>Перевірені відгуки</h1>
+                {% if comments %}
+                    {% for seen in comments %}
+                        <div class="admin-comments-2">
+                            <p><b>{{ seen.name }}</b></p>
+                            <p><b>{{ seen.about }}</b></p>
+                            <p>{{ seen.text }}</p>
+                            <p>
+                                <b>{{ seen.date_added }} Status: {{ seen.status }}</b>
+                                <form action="{% url 'main_app:downvote_comment' seen.id %}">
+                                    <button name="submit">Downvote</button>
+                                </form>
+                            </p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Nothing here</p>
+                {% endif %}
+                <hr>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock content %}

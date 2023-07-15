@@ -17,7 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from main_app.views import pageNotFound
+
+handler404 = pageNotFound
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main_app.urls'))
+    path('users/', include('users.urls')),
+    path('', include('main_app.urls')),
+
+    path('oauth/', include('social_django.urls', namespace='social')),  # <-- here
 ]
+
+
