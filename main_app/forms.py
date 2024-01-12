@@ -11,10 +11,12 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'text': forms.Textarea(attrs={'cols': 72,
                                           'rows': 4,
+                                          'class': 'comment-form-text',
                                           'placeholder': 'Напишіть відгук! Він з\'явиться після перевірки.\n\n'
                                                          'Або залиште відгук на гугл картах, натиснувши на відповідне'
                                                          ' посилання збоку. Він автоматично з\'явиться на сайті.',
                                           'style': 'resize: none;',
+
                                           }),
             'name': forms.TextInput(attrs={'placeholder': 'Ім\'я та прізвище'}),
             'about': forms.TextInput(attrs={'placeholder': 'Звідки ви?'})}

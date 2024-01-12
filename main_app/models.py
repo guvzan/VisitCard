@@ -12,9 +12,9 @@ class Comment(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField()
+    title = models.CharField(max_length=50)
     text = models.TextField()
-    link = models.CharField()
+    link = models.CharField(max_length=150)
 
     def __str__(self):
         return self.text[:900] + '...'

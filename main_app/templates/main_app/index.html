@@ -33,7 +33,7 @@
                     </button>
                 </a>
                 <div class="elem elem-3">
-                    <img class="icon-1" src="{% static 'main_app/img/icon3.png'  %}" alt="">
+                    <img class="icon-1 icon-3" src="{% static 'main_app/img/icon3.png'  %}" alt="">
                         Пн - Пт
                         9:00 - 13:00
                 </div>
@@ -126,7 +126,7 @@
                             <h3 class="header-4-5">
                                 Написати відгук
                             </h3>
-                            <form action="{% url 'main_app:index' %}" method="post">
+                            <form class="comment-form" action="{% url 'main_app:index' %}" method="post">
                                 {% csrf_token %}
                                 <p>{{ form.name }} {{ form.about }} <a href="#">Перейти на гугл карти</a></p>
                                 <p>{{ form.text }}</p>
@@ -152,7 +152,6 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
-            </div>
             </div>
         </div>
     </div>
