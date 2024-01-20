@@ -1,1 +1,5 @@
-![VisitAll](https://github.com/guvzan/VisitCard/assets/55750045/556ec169-02fc-40f9-8790-672e1dedb232)
+<h1>Сайт-візитка для лікаря-невролога</h1>
+![VisitAll](https://github.com/guvzan/VisitCard/assets/55750045/6fe6181e-8c06-499f-be9c-b837a0888e7e)
+<h3>Виконано на Python (Django) з використанням HTML/CSS + Bootstrap, JavaScript</h3>
+<h3>До цікавих особливостей сайту можна віднести блог, який постійно видає випадкову статтю, інтерактивну панель відгуків та простеньку адмін-панель з можливістю налаштовувати блог та читати відгуки для прийняття рішення щодо їх публікації.</h3>
+![image](https://github.com/guvzan/VisitCard/assets/55750045/cbf1508e-42c4-48dd-9b18-756d545f37eb)
